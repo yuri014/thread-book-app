@@ -13,11 +13,11 @@ def card(request, card_id):
     import time
     import re
 
-    auth = tweepy.OAuthHandler('lpahsh0ZKC3Vigc3SvY1YxElU',
-                               'fbgQoBpdyK6VxcFpRplpEmOyGaQ7mEJes6f0fZHLTvuZBGhdTG')
+    auth = tweepy.OAuthHandler('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+                               'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 
-    auth.set_access_token('1285638475673489417-ecQW42KXUJpxEubS1PRFjboA7z8wkM',
-                          'a1XnXo7JjD9F4T3l8i53qulfQWGE2HtLTis4AZpRIeR3D')
+    auth.set_access_token('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+                               'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 
     api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
