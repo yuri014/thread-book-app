@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread Book</title>
+    <style>
+    * {
+    box-sizing: border-box
+    }
+
+    body {
+        font-family: 'Special Elite', cursive;
+        margin: 0;
+    }
+
+    .mySlides {
+        display: none
+    }
+
+    .cards {
+        background-color: white;
+        width: 100%;
+        height: 500px;
+        margin: auto;
+    }
+
+    h1 {
+        padding: 16px;
+        padding-top: 2%;
+        text-align: center;
+    }
+
+    h3 {
+        max-width: 1000px;
+        margin: auto;
+        padding-top: 16px;
+        padding-bottom: 50px;
+        text-align: center;
+        padding-left: 4px;
+    }
+
+    p {
+        max-width: 1000px;
+        margin: auto;
+        padding-top: 16px;
+        padding-bottom: 50px;
+        font-size: 26px;
+        padding-left: 4px;
+    }
+
+    a {
+        color: white;
+    }
+
+    .cardTitle {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 15%;
+    }
+
+    main {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    }
+
+    h4 {
+        padding: 15%;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    h2 {
+        padding: 15%;
+        padding-top: 22%;
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+
+    section {
+        margin-top: 20px;
+    }
+
+    .headerClass{
+        background-color: black;
+    }
+
+    .coverBook {
+        background-color: black;
+        width: 100%;
+        height: 500px;
+    }
+
+    .backgroundText {
+        background-color: white;
+        padding: 8px;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.109);
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fadeB {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+        .prev,
+        .next,
+        .text {
+            font-size: 11px
+        }
+    }
+
+    .social:hover {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+    .social {
+        -webkit-transform: scale(0.8);
+
+    }
+
+
+    #social-fb:hover {
+        color: rgb(59, 88, 151);
+    }
+    #social-tw:hover {
+        color: rgb(66, 154, 255);
+    }
+    #social-gp:hover {
+        color: rgb(59, 88, 151);
+    }
+    #social-em:hover {
+        color: rgb(226, 226, 226);
+    }
+    #social-ca:hover {
+        color: rgb(231, 94, 94);
+    }
+
+
+    </style>
+</head>
+
+<body onload="setPages()">
+
+    <header>
+
+        <nav class="navbar headerClass">
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-book"></i>
+                Thread Book
+            </a>
+            <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="SCFTDUFH42XCL" />
+                <input type="hidden" name="currency_code" value="BRL" />
+                <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0"
+                    name="submit" title="PayPal - The safer, easier way to pay online!"
+                    alt="Faça doações com o botão do PayPal" />
+                <img alt="" border="0" src="https://www.paypal.com/pt_BR/i/scr/pixel.gif" width="1" height="1" />
+            </form>
+        </nav>
+
+    </header>
+
+    <section>
+
+        <div class="container">
+            <h1>
+                TÁ COM O LIVRINHO AÍ?
+            </h1>
+
+            <h3>
+                Se a resposta for não, faça já o seu!
+            </h3>
+        </div>
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fadeB">
+                <div class="numbertext">1 / 5<span id="numPages"></span></div>
+                <div class="coverBook cards">
+                    <h1 class="cardTitle">
+                        <span class="backgroundText" id="coverResult">
+                            Crie um livro para a sua thread
+                        </span>
+                    </h1>
+                </div>
+                <!--<div class="text">Caption Text</div>-->
+            </div>
+
+            <div class="mySlides fadeB">
+                <div class="numbertext" style="color: black;">2 / 5<span></span></div>
+                <div class="cards">
+                    <h2>
+                        É simples!
+                    </h2>
+                </div>
+                <!--<div class="text">Caption Text</div>-->
+            </div>
+
+            <div class="mySlides fadeB">
+                <div class="numbertext" style="color: black;">3 / 5<span></span></div>
+                <div class="cards">
+                    <h2>
+                        Basta colar o id do último tweet da thread no input abaixo
+                    </h2>
+                </div>
+                <!--<div class="text">Caption Text</div>-->
+            </div>
+
+            <div class="mySlides fadeB">
+                <div class="numbertext" style="color: black;">4 / 5<span></span></div>
+                <div class="cards">
+                    <h4>
+                        Exemplo: twitter.com/bot_thread/status/1287149589666160645 <br>
+                        É só colocar o que está depois do status e pronto
+                    </h4>
+                </div>
+                <!--<div class="text">Caption Text</div>-->
+            </div>
+
+            <div class="mySlides fadeB">
+                <div class="numbertext" style="color: black;">5 / 5<span></span></div>
+                <div class="cards">
+                    <h2>
+                        E pronto! Você terá o seu livrinho.
+                    </h2>
+                </div>
+                <!--<div class="text">Caption Text</div>-->
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+
+    </section>
+
+    <main>
+            <div class="input-group flex-nowrap">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping"><i class="fa fa-book"></i></span>
+                </div>
+                <input type="text" name="th_id" id="tweetId" required class="form-control" placeholder="Tweet Id"
+                    aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="submit" class="btn btn-dark" onClick="javascript: window.open('/' + document.getElementById('tweetId').value);">
+            </div>
+    </main>
+
+    <article>
+        <div class="container">
+            <h1 style="padding-top: 130px;">
+                Possíveis upgrades
+            </h1>
+            <p>
+                Caso essa aplicação realmente seja usada por um público considerável, ela receberá upgrades.
+            </p>
+            <p>
+                Vou listar alguns:
+            </p>
+
+            <ul class="list-group list-group-flush" style="width: 90%; margin: auto;">
+                <li class="list-group-item">Download em formato de PDF</li>
+                <li class="list-group-item">Imagens nas páginas</li>
+                <li class="list-group-item">Funcionamento com bot no twitter</li>
+                <li class="list-group-item">Melhor design para o livro</li>
+            </ul>
+        </div>
+
+    </article>
+
+    <br><br><br><br><br>
+
+    <footer>
+        <nav class="navbar headerClass">
+            <div class="container">
+                <hr>
+                <div class="text-center center-block">
+                    <p class="txt-railway">Contato</p>
+                    <a target="_blank" href="https://www.facebook.com/people/Yuri-Flores/100017192049662"><i id="social-fb"
+                            class="fa fa-facebook-square fa-3x social"></i></a>
+                    <a target="_blank" href="https://twitter.com/bot_thread"><i id="social-tw"
+                            class="fa fa-twitter-square fa-3x social"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/yuri-flores-53b2b41a4"><i id="social-gp"
+                            class="fa fa-linkedin-square fa-3x social"></i></a>
+                    <a target="_blank" href="https://github.com/yuri014/"><i id="social-em"
+                            class="fa fa-github fa-3x social"></i></a>
+                    <a target="_blank" href="https://www.catarse.me/projeto_comp_art/"><i id="social-ca"
+                            class="fa fa-plus-circle fa-3x social"></i></a>
+
+                </div>
+                <hr>
+            </div>
+        </nav>
+    </footer>
+
+    <script>
+
+    // Início do slide
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    //* Término do slide
+
+    </script>
+
+</body>
+
+</html>
