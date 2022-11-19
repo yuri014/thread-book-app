@@ -80,8 +80,9 @@ tweepy==3.9.0
 twitter==1.18.0
 txaio==20.4.1
 Unidecode==1.1.1
-urllib3==1.25.9
+urllib3==1.26.5
 whitenoise==5.1.0
 wrapt==1.12.1
 zope.event==4.4
 zope.interface==5.1.0
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
