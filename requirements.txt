@@ -16,7 +16,7 @@ cffi==1.14.0
 chardet==3.0.4
 colorama==0.4.3
 constantly==15.1.0
-cryptography==3.3.2
+cryptography==41.0.4
 defusedxml==0.6.0
 -e git+https://github.com/django/django.git@659a73bc0a2df9be856e23fcfc6cc66d0d1a35fd#egg=Django
 django-allauth==0.42.0
